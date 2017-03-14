@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import SAConfettiView // Import the ConfettiView/Library Pod
+
 
 class ViewController: UIViewController {
-
+    
+    var confiettiView: SAConfettiView! // The Confetti Vie!
+    @IBOutlet weak var myImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        myImage.image = UIImage(named: "apple")
+        
+        confiettiView = SAConfettiView(frame: self.view.bounds) // Setup our confetti View
+        self.view.addSubview(confiettiView) // Add it to the screen
+        confiettiView.startConfetti() // Make it rain confetti!
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
-
